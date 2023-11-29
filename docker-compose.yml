@@ -23,6 +23,15 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - backend
+  europe:
+    image: "webtrade/europemap"
+    container_name: "europemap_container"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.europe.rule=Host(`europe.salarsalim.dk`)"
+      - "traefik.http.routers.europe.entrypoints=websecure"
+      - "traefik.http.routers.europe.tls.certresolver=myresolver"
+      - "com.centurylinklabs.watchtower.enable=true"
 
 networks:
   backend:
