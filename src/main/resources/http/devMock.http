@@ -1,0 +1,17 @@
+GET {{url}}/pmocks
+###
+GET {{url}}/pmocks/1
+###
+GET {{url}}/pmocks/type/Rose
+###
+POST {{url}}/pmocks
+Content-Type: application/json
+
+{
+  "id": 4,
+  "plantType": "FruitTree",
+  "name": "Apple Tree",
+  "price": 15,
+  "maxHeight": 20
+
+}
